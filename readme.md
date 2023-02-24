@@ -34,7 +34,7 @@ To retrieve WordPress posts, make a GET request to the API endpoint:
 
 The response will be a list of JSON objects containing the post title and content.
 
-## Contributing
+<!-- ## Contributing
 
 Contributions to this project are welcome. To contribute, follow these steps:
 
@@ -42,7 +42,7 @@ Fork the repository
 Create a new branch (git checkout -b feature)
 Commit your changes (git commit -am 'Add feature')
 Push the branch (git push origin feature)
-Create a Pull Request
+Create a Pull Request -->
 
 ## License
 
