@@ -1,6 +1,6 @@
-# WordPress API with Django Rest Framework
+# Sanitise your WordPress posts with Django Rest Framework 
 
-This app provides a RESTful API for retrieving WordPress posts using Django Rest Framework and sanitising them of HTML tags. The API endpoint returns data in JSON format and is built using Python 3.
+This app provides a RESTful API for retrieving WordPress posts using Django Rest Framework and sanitises them of HTML tags. The API endpoint returns data in JSON format and is built using Python 3.
 
 [Live Demo](https://wp-purity.herokuapp.com/wordpress/)
 
