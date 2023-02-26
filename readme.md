@@ -43,7 +43,7 @@ python manage.py runserver
 To retrieve WordPress posts, make a GET request to the API endpoint:
 
 ```
-GET yoursite.com/wordpress/
+GET /wordpress/
 ```
 
 The response will be a list of JSON objects containing the post title and content.
