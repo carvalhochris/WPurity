@@ -6,10 +6,15 @@ from rest_framework.response import Response
 
 class WordPressViewSet(viewsets.ViewSet):
     def list(self, request):
-        url = "https://unlockyoursound.com/wp-json/wp/v2/posts"
+        # Retrieve the WordPress REST API endpoint URL from the request query parameters
+        url = request.query_params.get('wp_rest_endpoint')
+
+        if not url:
+            # If the 'wp_rest_endpoint' query parameter is not provided, return a 400 error response
+            return Response({'error': 'Missing wp_rest_endpoint query parameter'}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            # Make a GET request to your WordPress endpoint
+            # Make a GET request to the specified WordPress endpoint URL
             response = requests.get(url)
 
             # If the response was successful, serialize the data to pure JSON
