@@ -54,21 +54,22 @@ Run the server
 ```
 python manage.py runserver
 ```
-## Usage
+## Local Usage
 
 Retrieving WordPress Posts
 
 To retrieve WordPress posts, make a GET request to the API endpoint with the wp_rest_endpoint query parameter set to the URL of the WordPress REST API endpoint you want to retrieve the sanitized list of posts from:
 
 ```
-GET /wordpress/?wp_rest_endpoint=https://example.com/wp-json/wp/v2/posts
+curl -X GET 'http://localhost:8000/wordpress/?wp_rest_endpoint=https://unlockyoursound.com/wp-json/wp/v2/posts'
 ```
 
 Replace https://example.com/wp-json/wp/v2/posts with the actual URL of the WordPress REST API endpoint you want to retrieve the sanitized list of posts from.
 
 The response will be a list of JSON objects containing the post title and content, with all HTML tags removed from the content.
 
-Contributing
+## Contributing
+
 Contributions to this project are welcome. To contribute, follow these steps:
 
 * Fork the repository
