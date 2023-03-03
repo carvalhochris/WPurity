@@ -21,7 +21,11 @@ class WordPressViewSet(viewsets.ViewSet):
             if response.status_code == 200:
                 serializer = WordPressSerializer(response.json(), many=True)
                 return Response(serializer.data)
+            
+            # print("Reponse: ", response)
 
         except requests.exceptions.RequestException as e:
             # If there was an error with the request, return a 500 error response
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        

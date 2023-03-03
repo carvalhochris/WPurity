@@ -4,10 +4,11 @@ from bs4 import BeautifulSoup
 
 class WordPressSerializer(serializers.Serializer):
     title = serializers.CharField(source="title.rendered")
+    slug = serializers.SerializerMethodField()
     content = serializers.SerializerMethodField()
 
     def get_content(self, obj):
-    # Use BeautifulSoup to parse the WordPress HTML content
+        # Use BeautifulSoup to parse the WordPress HTML content
         soup = BeautifulSoup(obj['content']['rendered'], 'html.parser')
 
         # Extract the plain text from the parsed HTML
@@ -21,4 +22,9 @@ class WordPressSerializer(serializers.Serializer):
 
         # Return the sanitized content
         return content
+
+    def get_slug(self, obj):
+        # Retrieve the slug value from the WordPress API response
+        return obj['slug']
+
 
