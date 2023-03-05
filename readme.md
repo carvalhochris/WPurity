@@ -1,14 +1,16 @@
-# Sanitise your WordPress posts with Django Rest Framework
+# Sanitise your WordPress posts for modern front-end development
 
-This app provides a RESTful API for retrieving WordPress posts using Django Rest Framework and sanitises them of HTML tags. The API endpoint returns data in JSON format and is built using Python 3.
+This app provides a RESTful API for retrieving WordPress posts and sanitises them of HTML tags. The API endpoint returns data in JSON format and is built using Python 3, Django Rest Framework, and BeautifulSoup.
 
-## Example curl request
+## Test with curl
 
 ```
 curl -X GET 'https://wp-purity.herokuapp.com/wordpress/?wp_rest_endpoint=https://unlockyoursound.com/wp-json/wp/v2/posts'
 ```
 
-## Postman usage
+Replace 'unlockyoursound.com' with your Wordpress domain
+
+## Test with Postman
 
 * Open Postman and create a new request.
 * Set the request method to GET.
@@ -21,9 +23,15 @@ https://wp-purity.herokuapp.com/wordpress/
 * Click the Send button to send the request to the demo app's API endpoint.
 * The response will be a list of JSON objects containing the sanitized list of posts from the https://unlockyoursound.com/wp-json/wp/v2/posts endpoint.
 
-Note that you'll need to replace https://unlockyoursound.com/wp-json/wp/v2/posts with the actual URL of the WordPress REST API endpoint you want to retrieve the sanitized list of posts from.
+Replace 'unlockyoursound.com' with your Wordpress domain
 
-## Installation
+## Use the Live API
+
+Now that you have tested the API, you can use it in your own projects. 
+
+## Spin up your own instance
+
+### Installation
 Clone the repository
 
 ```
@@ -48,9 +56,6 @@ Run the server
 ```
 python manage.py runserver
 ```
-## Local Usage
-
-Retrieving WordPress Posts
 
 To retrieve WordPress posts, make a GET request to the API endpoint with the wp_rest_endpoint query parameter set to the URL of the WordPress REST API endpoint you want to retrieve the sanitized list of posts from:
 
