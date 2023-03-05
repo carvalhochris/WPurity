@@ -24,9 +24,9 @@ https://wp-purity.herokuapp.com/wordpress/
 | --- | --- |
 | wp_rest_endpoint | https://unlockyoursound.com/wp-json/wp/v2/posts |
 
+* You might replace 'unlockyoursound.com' with your own Wordpress domain
 * Click the Send button to send the request to the demo app's API endpoint.
 * The response will be a list of JSON objects containing the sanitized list of posts from the https://unlockyoursound.com/wp-json/wp/v2/posts endpoint. Looking a little something like this:
-* Replace 'unlockyoursound.com' with your Wordpress domain
 
 ```
 [
