@@ -33,7 +33,20 @@ https://wp-purity.herokuapp.com/wordpress/
     {
         "title": "DIY Diaries: Cheri Lyn",
         "slug": "cheri-lyn",
-        "content": " Today we interview Cheri Lyn from Germany. Cheri is a savvy DIY artist who uses an array of digital marketing skills to foster her fan base. We find out how she got started, how she leverages social media, and pearls of wisdom for budding artists. What got you started in music? I was born into a family of musicians – both of my parents were successful musicians... "    
+        "content": {
+            "headings": [
+                {
+                    "tag": "h2",
+                    "text": "What got you started in music?",
+                    "paragraphs": [
+                        "I was born into a family of musicians – both of my parents were successful musicians.",
+                        "I have always been surrounded by music and business. My mom was a successful singer and for me, it was normal that she would do gigs on the weekends or invite her music friends over to our house, where we had many table music sessions.",
+                        "For me therefore I think my path was already clear. I realised very early in my childhood how music can connect people. I could always feel what (live) music did to me.",
+                        "Therefore, music has always been my anchor and I never doubted doing anything else."
+                    ]
+                },
+            ]
+        }
     },
 ]
 ```
