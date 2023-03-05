@@ -18,12 +18,25 @@ Replace 'unlockyoursound.com' with your Wordpress domain
 ```
 https://wp-purity.herokuapp.com/wordpress/
 ```
-* Click on the Params button to add a new query parameter to the request.
-* Enter wp_rest_endpoint as the key and https://unlockyoursound.com/wp-json/wp/v2/posts as the value.
-* Click the Send button to send the request to the demo app's API endpoint.
-* The response will be a list of JSON objects containing the sanitized list of posts from the https://unlockyoursound.com/wp-json/wp/v2/posts endpoint.
+* Click on the Params button to add a new query parameter to the request and enter the following values:
 
-Replace 'unlockyoursound.com' with your Wordpress domain
+| KEY | VALUE |
+| --- | --- |
+| wp_rest_endpoint | https://unlockyoursound.com/wp-json/wp/v2/posts |
+
+* Click the Send button to send the request to the demo app's API endpoint.
+* The response will be a list of JSON objects containing the sanitized list of posts from the https://unlockyoursound.com/wp-json/wp/v2/posts endpoint. Looking a little something like this:
+* Replace 'unlockyoursound.com' with your Wordpress domain
+
+```
+[
+    {
+        "title": "DIY Diaries: Cheri Lyn",
+        "slug": "cheri-lyn",
+        "content": " Today we interview Cheri Lyn from Germany. Cheri is a savvy DIY artist who uses an array of digital marketing skills to foster her fan base. We find out how she got started, how she leverages social media, and pearls of wisdom for budding artists. What got you started in music? I was born into a family of musicians – both of my parents were successful musicians... "    
+    },
+]
+```
 
 ## Use the Live API
 
