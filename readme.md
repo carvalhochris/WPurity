@@ -27,7 +27,7 @@ Replace 'unlockyoursound.com' with your Wordpress domain
 
 ## Use the Live API
 
-Now that you have tested the API, you can use it in your own projects. 
+Now that you have tested the API, you can now use it in your own frontend projects. 
 
 ## Spin up your own instance
 
