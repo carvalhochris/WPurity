@@ -44,29 +44,48 @@ Now that you have tested the API, you can now use it in your own frontend projec
 
 ### Example with React
 
+[Live Demo](https://test-purity.vercel.app/)
+
 ```
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        'https://wp-purity.herokuapp.com/wordpress/?wp_rest_endpoint=https://unlockyoursound.com/wp-json/wp/v2/posts'
+        "https://wp-purity.herokuapp.com/wordpress/?wp_rest_endpoint=https://unlockyoursound.com/wp-json/wp/v2/posts?categories=322"
       );
       const data = await response.json();
       setPosts(data);
+      setIsLoading(false); // set isLoading to false once data is fetched
     };
     fetchData();
   }, []);
 
+  if (isLoading) {
+    return (
+      <div style={{ maxWidth: 500, margin: "0 auto" }}>Loading...</div>
+    );
+  }
+
   return (
-    <div>
-      {posts.map(post => (
+    <div style={{ maxWidth: 500, margin: "0 auto" }}>
+      {posts.map((post) => (
         <div key={post.slug}>
           <h2>{post.title}</h2>
-          <p>{post.content}</p>
+          {post.content.headings.map((heading) => (
+            <div key={heading.text}>
+              <h3>{heading.text}</h3>
+              {heading.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          ))}
+          <br></br>
+          <hr></hr>
         </div>
       ))}
     </div>
