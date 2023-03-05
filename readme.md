@@ -42,6 +42,40 @@ https://wp-purity.herokuapp.com/wordpress/
 
 Now that you have tested the API, you can now use it in your own frontend projects. 
 
+### Example with React
+
+```
+import React, { useState, useEffect } from 'react';
+
+function Posts() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        'https://wp-purity.herokuapp.com/wordpress/?wp_rest_endpoint=https://unlockyoursound.com/wp-json/wp/v2/posts'
+      );
+      const data = await response.json();
+      setPosts(data);
+    };
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      {posts.map(post => (
+        <div key={post.slug}>
+          <h2>{post.title}</h2>
+          <p>{post.content}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Posts;
+```
+
 ## Spin up your own instance
 
 ### Installation
