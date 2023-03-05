@@ -79,7 +79,7 @@ Contributions to this project are welcome. To contribute, follow these steps:
 
 ## Acknowledgments
 
-This app was inspired by the WordPress API and Django Rest Framework.
+This app was inspired by the [WordPress REST API](https://developer.wordpress.org/rest-api/) and [Django Rest Framework](https://www.django-rest-framework.org/).
 
 ## Issues
 
